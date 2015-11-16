@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AdapterTest</string>
+    <string name="list_item_x">Item %s</string>
+</resources>

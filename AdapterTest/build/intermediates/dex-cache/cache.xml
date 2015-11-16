@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/rafaelcarvalho/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-93dd986272b7162051840c06a767790337af860c.jar" />
+    </item>
+    <item
+        jar="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/pre-dexed/debug/classes-b5e9eccf6ac4aa4a0eaf49c7d4e3cb30a1374922.jar" />
+    </item>
+    <item
+        jar="/Users/rafaelcarvalho/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.2/7d6149d856b880bbd676047aacb8446a758fbbdb/androidannotations-api-3.3.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7d6149d856b880bbd676047aacb8446a758fbbdb">
+        <dex dex="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.3.2-f1136e90042cfc4852776c5989f1581f95479fad.jar" />
+    </item>
+    <item
+        jar="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-7ffae7b7097eda7274e0fb731f3225f358b6348b.jar" />
+    </item>
+    <item
+        jar="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/rafaelcarvalho/AndroidStudioProjects/AdapterTest/app/build/intermediates/pre-dexed/debug/classes-5b23b38afc4ef389c63fbb4dd40ae5ae76abc2a7.jar" />
+    </item>
+
+</items>
