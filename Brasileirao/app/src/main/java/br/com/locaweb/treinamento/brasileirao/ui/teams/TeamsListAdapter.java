@@ -11,28 +11,10 @@ import org.androidannotations.annotations.RootContext;
 import java.util.List;
 
 import br.com.locaweb.treinamento.brasileirao.domain.Team;
+import br.com.locaweb.treinamento.brasileirao.ui.shared.BrasileiraoAdapter;
 
 @EBean
-public class TeamsListAdapter extends BaseAdapter {
-
-    @RootContext protected Context ctx;
-
-    List<Team> teamsList;
-
-    @Override
-    public int getCount() {
-        return teamsList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return teamsList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+public class TeamsListAdapter extends BrasileiraoAdapter<Team> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -43,9 +25,5 @@ public class TeamsListAdapter extends BaseAdapter {
         ((TeamsListItemView) convertView).bind(((Team) getItem(position)));
 
         return convertView;
-    }
-
-    public void setTeams(List<Team> teams) {
-        this.teamsList = teams;
     }
 }

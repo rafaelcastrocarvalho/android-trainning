@@ -1,6 +1,7 @@
 package br.com.locaweb.treinamento.brasileirao.ui.matches;
 
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 import com.activeandroid.query.Select;
 
@@ -8,6 +9,8 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.FragmentArg;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
@@ -29,6 +32,9 @@ public class MatchesFragment extends Fragment {
     @ViewById
     StickyListHeadersListView list;
 
+    @FragmentArg
+    Long teamId;
+
     @AfterViews
     protected void init() {
         fetchData();
@@ -46,39 +52,22 @@ public class MatchesFragment extends Fragment {
         list.setAdapter(adapter);
     }
 
-    private List<Match> createMatches() {
-        List<Match> matches = new ArrayList<>();
-
-        Team palmeiras      = new Select().from(Team.class).where("name = ?", "Palmeiras").executeSingle();
-        Team curintia       = new Select().from(Team.class).where("name = ?", "Curintia").executeSingle();
-        Team cruzeiro       = new Select().from(Team.class).where("name = ?", "Cruzeiro").executeSingle();
-        Team atletico       = new Select().from(Team.class).where("name = ?", "Atlético-MG").executeSingle();
-        Team internacional  = new Select().from(Team.class).where("name = ?", "Internacional").executeSingle();
-        Team gremio         = new Select().from(Team.class).where("name = ?", "Gremio").executeSingle();
-        Team saoPaulo       = new Select().from(Team.class).where("name = ?", "São Paulo").executeSingle();
-        Team santos         = new Select().from(Team.class).where("name = ?", "Santos").executeSingle();
-
-        matches.add(new Match(palmeiras, 4, curintia, 1, "Allians Parque, São Paulo", 1));
-        matches.add(new Match(saoPaulo, 1, santos, 1, "Morumbi, São Paulo", 1));
-        matches.add(new Match(internacional, 2, gremio, 1, "Sei lá, São Paulo", 1));
-        matches.add(new Match(cruzeiro, 3, atletico, 3, "Toca da Raposa, São Paulo", 1));
-        matches.add(new Match(curintia, 1, palmeiras, 3, "Impressorão, São Paulo", 1));
-
-        matches.add(new Match(palmeiras, 4, curintia, 1, "Allians Parque, São Paulo", 2));
-        matches.add(new Match(saoPaulo, 1, santos, 1, "Morumbi, São Paulo", 2));
-        matches.add(new Match(internacional, 2, gremio, 1, "Sei lá, São Paulo", 2));
-        matches.add(new Match(cruzeiro, 3, atletico, 3, "Toca da Raposa, São Paulo", 2));
-        matches.add(new Match(curintia, 1, palmeiras, 3, "Impressorão, São Paulo", 2));
-
-        return matches;
-
-//        for (Match match: matches) {
-//           match.save();
-//        }
+    @ItemClick(android.R.id.list)
+    public void onListItemClick(int position) {
+        Match match = adapter.getItem(position);
+        String score = match.getHomeTeamScore() + " X " + match.getAwayTeamScore();
+        Toast.makeText(getActivity(), score, Toast.LENGTH_LONG).show();
     }
 
     public List<Match> getMatches() {
-        return new Select().all().from(Match.class).execute();
+        if(teamId == null) {
+            return new Select().all().from(Match.class).execute();
+        } else {
+            return new Select().from(Match.class)
+                    .where("homeTeam = ?", teamId)
+                    .or("awayTeam = ?", teamId)
+                    .execute();
+        }
     }
 
 }

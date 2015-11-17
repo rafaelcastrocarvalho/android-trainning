@@ -3,21 +3,45 @@ package br.com.locaweb.treinamento.brasileirao.domain;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
+
+import br.com.locaweb.treinamento.brasileirao.infra.http.MyGsonHttpMessageConverter;
 
 
 @Table(name = "matches")
 public class Match extends Model {
 
-    @Column private int homeTeamScore;
-    @Column private int awayTeamScore;
-    @Column private Team homeTeam;
-    @Column private Team awayTeam;
-    @Column private int round;
-    @Column private int seasonId;
-    @Column private String place;
-    @Column private Date date;
+    @SerializedName("home_team_score")
+    @Column
+    private int homeTeamScore;
+
+    @SerializedName("away_team_score")
+    @Column
+    private int awayTeamScore;
+
+    @SerializedName("home_team")
+    @Column
+    private Team homeTeam;
+
+    @SerializedName("away_team")
+    @Column
+    private Team awayTeam;
+
+    @Column
+    private int round;
+
+    @SerializedName("season_id")
+    @Column
+    private int seasonId;
+
+    @Column
+    private String place;
+
+    @Column
+    private Date date;
 
     public Match() { }
 

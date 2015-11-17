@@ -1,6 +1,8 @@
 package br.com.locaweb.treinamento.brasileirao.ui.teams;
 
 import android.support.v4.app.ListFragment;
+import android.view.View;
+import android.widget.ListView;
 
 import com.activeandroid.query.Select;
 
@@ -14,12 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.locaweb.treinamento.brasileirao.domain.Team;
+import br.com.locaweb.treinamento.brasileirao.ui.details.TeamDetailsActivity_;
 
 @EFragment
 public class TeamsListFragment extends ListFragment {
 
     @Bean
     TeamsListAdapter adapter;
+
     private List<Team> allTeams;
 
     @AfterViews
@@ -29,13 +33,19 @@ public class TeamsListFragment extends ListFragment {
 
     @Background
     public void fetchData() {
-        adapter.setTeams(getAllTeams());
+        adapter.setList(getAllTeams());
         setListAdapter();
     }
 
     @UiThread
     public void setListAdapter() {
        super.setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        Team team = adapter.getItem(position);
+        TeamDetailsActivity_.intent(getActivity()).teamId(team.getId()).start();
     }
 
     private void createTeams() {
