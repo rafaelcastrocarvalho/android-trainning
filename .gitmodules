@@ -1,0 +1,3 @@
+[submodule "leandro-apps"]
+	path = leandro-apps
+	url = https://github.com/leaudro/android_trainning.git
