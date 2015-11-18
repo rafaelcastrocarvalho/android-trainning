@@ -8,4 +8,10 @@
         android:title="@string/menu_search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_bla"
+        android:title="Bla"
+        android:icon="@android:drawable/alert_dark_frame"
+        app:showAsAction="always" />
 </menu>

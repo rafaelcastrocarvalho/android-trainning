@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.OptionsItem;
@@ -20,7 +19,7 @@ import org.androidannotations.annotations.ViewById;
 import br.com.locaweb.treinamento.tvmaze.R;
 import br.com.locaweb.treinamento.tvmaze.model.Show;
 
-@EActivity(R.layout.activity_main)
+@EActivity(R.layout.activity_home)
 @OptionsMenu(R.menu.main)
 public class HomeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -36,13 +35,9 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
     @OptionsMenuItem
     MenuItem menuSearch;
 
-    @OptionsItem(R.id.menu_search)
-    boolean menuSearch() {
-        menuSearch.setVisible(false);
-        // menuSearch was selected
-        // the return type may be void or boolean (false to allow normal menu processing to proceed, true to consume it here)
-        Toast.makeText(this, "BLA", Toast.LENGTH_SHORT);
-        return true;
+    @OptionsItem(R.id.menu_bla)
+    void menuSearch() {
+        Toast.makeText(this, "Clicou!", Toast.LENGTH_SHORT).show();
     }
 
     HomePagerAdapter adapter;
