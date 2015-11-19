@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <!--EditText
         android:id="@+id/search"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -17,22 +17,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="Search"/>
+        android:text="Search"/-->
 
     <ImageView
         android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:layout_below="@id/search"
         tools:src="@drawable/lost"/>
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_below="@id/search"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        />
 
 </RelativeLayout>

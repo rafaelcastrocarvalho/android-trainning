@@ -31,7 +31,7 @@ public class EpisodesFragment extends Fragment {
     protected Show show;
 
     @ViewById
-    protected StickyListHeadersListView list;
+    protected StickyListHeadersListView episodesList;
 
     @Bean(value = ShowRepositoryImpl.class)
     protected ShowRepository showRepository;
@@ -62,6 +62,6 @@ public class EpisodesFragment extends Fragment {
     @UiThread
     protected void configureAdapter() {
         adapter.setList(new ArrayList<>(episodes));
-        list.setAdapter(adapter);
+        episodesList.setAdapter(adapter);
     }
 }
