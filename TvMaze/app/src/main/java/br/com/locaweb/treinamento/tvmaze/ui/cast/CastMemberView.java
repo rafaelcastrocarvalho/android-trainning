@@ -1,6 +1,7 @@
 package br.com.locaweb.treinamento.tvmaze.ui.cast;
 
 import android.content.Context;
+import android.graphics.Picture;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import org.androidannotations.annotations.ViewById;
 
 import br.com.locaweb.treinamento.tvmaze.R;
 import br.com.locaweb.treinamento.tvmaze.model.CastMember;
+import br.com.locaweb.treinamento.tvmaze.model.Image;
 
 @EViewGroup(R.layout.cast_member)
 public class CastMemberView extends LinearLayout {
@@ -31,7 +33,10 @@ public class CastMemberView extends LinearLayout {
 
 
     public void bind(CastMember member) {
-        Picasso.with(getContext()).load(member.getPerson().getImage().getMedium()).into(image);
+        Image image = member.getPerson().getImage();
+        if(image != null) {
+            Picasso.with(getContext()).load(image.getMedium()).into(this.image);
+        }
         name.setText(member.getPerson().getName());
         character.setText(member.getCharacter().getName());
     }

@@ -28,6 +28,11 @@ public class ShowRepositoryImpl implements ShowRepository {
     }
 
     @Override
+    public Collection<Show> listShows(int page) {
+        return tvMazeClient.getShows(page);
+    }
+
+    @Override
     public Collection<CastMember> getCast(Long showId) {
         return tvMazeClient.getShowCast(showId);
     }

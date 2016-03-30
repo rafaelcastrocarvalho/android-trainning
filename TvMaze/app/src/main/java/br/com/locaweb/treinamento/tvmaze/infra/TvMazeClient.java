@@ -21,6 +21,9 @@ public interface TvMazeClient {
     @Get("/shows/{id}/episodes")
     public Collection<Episode> getShowEpisodes(long id);
 
+    @Get("/shows?page={page}")
+    public Collection<Show> getShows(int page);
+
     @Get("/shows/{id}/cast")
     public Collection<CastMember> getShowCast(long id);
 

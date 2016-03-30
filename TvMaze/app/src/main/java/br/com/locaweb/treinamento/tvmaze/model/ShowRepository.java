@@ -9,6 +9,8 @@ public interface ShowRepository {
 
     Collection<Episode> listShowEpisodes(Long showId);
 
+    Collection<Show> listShows(int page);
+
     Collection<CastMember> getCast(Long showId);
 
     Collection<Show> findByName(String showName);
